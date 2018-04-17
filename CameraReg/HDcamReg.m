@@ -59,15 +59,16 @@ camList = webcamlist;
 cam = webcam(1);
 cam.ExposureMode='manual';
 cam.Exposure=-5;
-
-
+cam.resolution='1920x1080';
+cam.WhiteBalanceMode='manual'
+cam.WhiteBalance=6500;
 %% Acquire a Frame
 % To acquire a single frame, use the |snapshot| function.
 img = snapshot(cam);
 
 axes(handles.axes1);
 % Display the frame in a figure window.
-imshow(imcrop(snapshot(cam),[400 0 1080 1080]));
+% imshow(imcrop(snapshot(cam),[400 0 1080 1080]));
 
 % Choose default command line output for HDcamReg
 handles.output = hObject;
